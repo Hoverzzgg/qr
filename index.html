@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Generator</title>
+</head>
+<body style="text-align:center; font-family:sans-serif;">
+
+<h1>Мій QR генератор</h1>
+
+<input type="text" id="text" placeholder="Введи текст або посилання" size="40">
+<br><br>
+
+<button onclick="generateQR()">Створити QR</button>
+
+<br><br>
+<img id="qr">
+
+<script>
+function generateQR() {
+    let data = document.getElementById("text").value;
+    let qr = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(data);
+    document.getElementById("qr").src = qr;
+}
+</script>
+
+</body>
+</html>
